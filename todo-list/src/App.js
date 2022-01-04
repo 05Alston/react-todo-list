@@ -35,6 +35,7 @@ function App() {
           break;
       }
     }
+    filterHandler();
     localStorage.setItem(('todos'), JSON.stringify(todos))
   }, [todos, status]);
   return (
