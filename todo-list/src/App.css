@@ -1,0 +1,137 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --color-light:#FF7682;
+  --accent-color: #ff6f47;
+  --color-dark: #725A7A;
+  --accent-dark:#355c7d;
+}
+body {
+  background-image: linear-gradient(135deg, var(--color-light) 0%, var(--color-dark) 130%);  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+h1 {
+  font-size: 2rem;
+  color: white;
+}
+h1,
+.new-task {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.new-task input,
+.new-task button {
+  outline: none;
+  padding: 0.5rem;
+  font-size: 1.7rem;
+  border: none;
+  background: white;
+  color: var(--accent-dark);
+}
+.new-task input{
+  max-width: 50%;
+}
+.new-task button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.new-task button:hover {
+  background: var(--accent-color);
+  color: white;
+}
+.place-holder{
+  color: var(--accent-dark);
+  position:absolute;
+  left: 28%;
+  top: 29%;
+  transition: top 250ms ease,
+  font-size 250ms ease,
+  color 250ms ease;
+}
+input:valid + .place-holder,
+input:focus + .place-holder{
+  color: white;
+  top: 25%;
+  font-size: 9px;
+  background-color: var(--color-light);
+}
+.filter-todo {
+  padding: 1rem;
+  outline: 0;
+  box-shadow: none;
+  border: 0;
+  color: var(--accent-dark);
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  width: 7rem;
+}
+.list{
+  display: flex;
+  flex-direction:column ;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
+.task-list {
+  list-style: none;
+  background: white;
+  font-size: 1.5rem;
+  color: var(--accent-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+  min-width: 22ch;
+}
+.task-list li {
+  flex: 1;
+}
+.list-item{
+  padding: 0 1rem;
+  transition: all 1s ease;
+}
+  /* Custom Select */
+.select {
+  margin: 1rem 0rem 1rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background: #ff6f47;
+  color: white;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.trash-btn,
+.completed-btn {
+  background: #ff6f47;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+.completed-btn{
+  background: #0BD4A2;
+}
+.trash-btn:hover,
+.completed-btn:hover{
+  color: var(--color-dark);
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
