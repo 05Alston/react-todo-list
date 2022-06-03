@@ -12,9 +12,7 @@ const NewTask = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
         if (inputText === "") {
             return;
         }
-        if (inputText.length > 18) {
-            inputText = inputText.substring(0, 15) + "...";
-        }
+        
         setTodos([...todos, { text: inputText, complted: false, id: todos.length }])
         setInputText("");
     }
